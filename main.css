@@ -1,0 +1,216 @@
+
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-image:url(https://images.pexels.com/photos/761142/pexels-photo-761142.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.wrapper{
+    display: flex;
+    padding: 50px;
+    margin: 0 auto;
+}
+
+
+.buttons ul{
+    list-style: none;
+    margin:0;
+    padding:20px;
+    display: flex;
+    justify-content: center;
+    align-content:center;
+    flex-wrap:wrap;
+    cursor: pointer;
+}
+
+a{
+    color: #ffffff;
+    background: rgba(0, 0,0,0.5);
+    border:2px solid black;
+    font-size: 6em;
+    text-decoration: none;
+    margin: 10px 10px;
+    padding: 20px 10px;
+    line-height: 0;
+    display: block; 
+    text-align:center;
+    border-radius: 15px;
+}
+
+.social a{
+    box-shadow:6px 6px #000000;
+}
+.social{
+    width:50%;
+}
+
+.fb{
+    transform: skewX(-9deg);
+}
+.fb i{
+    transform:skewX(9deg);
+}
+
+.fb:hover a{
+    background:#ffffff;
+    color:#3B5998;
+}
+.fb:active a{
+    background: darkgray;
+    color:lightgray;
+}
+.fb:hover i{
+    animation: fbslide 1.2s ease-out;
+}
+
+.gh{
+    transform:skewX(9deg);
+}
+.gh i{
+    transform:skewX(-9deg);
+}
+.gh:hover a{
+    background:#000000;
+}
+.gh:hover i{
+    animation:ghzoom 1.2s ease-out;
+}
+.gh:active a{
+    background: darkgray;
+    color:lightgray;
+}
+.ig{
+    transform:skewY(-6deg);
+    transform-origin: top right;
+    
+}
+.ig i{
+    transform:skewY(6deg);
+}
+.ig:hover i{
+    animation: igiconswitch 1s ease-out;
+}
+.ig:hover a{
+    background:radial-gradient(circle at 10% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    box-shadow: 20px 20px 0 #2c3e50;
+    animation:igbackgroundswitch 1s ease-out;
+    transition:1s;
+}
+.ig:active a{
+    background: darkgray;
+    color:lightgray;
+}
+.twitter{
+    transform:skewY(6deg);
+    transform-origin: top left;
+}
+.twitter i{
+    transform:skewY(-6deg);
+}
+.twitter:hover a{
+    color:#1DA1F2;
+    background: #ffffff;
+    box-shadow: 20px 20px 0 #2c3e50;
+    transition:1s;
+}
+.twitter:active a{
+    background: darkgray;
+    color:lightgray;
+}
+.twitter:hover i{
+    animation: twitterstretch 1.2s ease-in-out;
+}
+.codenation{
+    transition: background 2s, transform 2s 0.4s;
+}
+
+.codenation:hover{
+    filter: invert(100%);
+    border-radius: 15px;
+    transform:rotate(360deg);
+}
+
+.bird{
+    background-image: url("img/bird-cells.svg");
+    background-size: auto 100%;
+    width:30px;
+    height:40px;
+    will-change:background-position;
+    animation-name: fly-cycle;
+    animation-timing-function:steps(10);
+    animation-iteration-count: infinite;
+    animation-duration:1s;
+    animation-delay:-0.5s;
+}
+.bird-container{
+    position: absolute;
+    top:20%;
+    left:-10%;
+    transform: scale(0) translateX(-10vw);
+    will-change: transform;
+    animation-name: fly-right;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 15s;
+    animation-delay: 1s;
+}
+
+@keyframes fbslide {
+    20%{transform: translateX(100%)skewX(9deg)}
+    40%{transform:translateX(-100%)skewX(9deg)}
+    60%{transform: translateX(200%)skewX(9deg)}
+    80%{transform:translateX(-200%)skewX(9deg)}
+    100%{transform: translateX(0%)skewX(9deg)}
+}
+
+@keyframes ghzoom{
+    0%{transform:scale(0)skewX(-9deg)}
+    33%{transform:scale(-0.1)skewX(-9deg)}
+    66%{transform:scale(1.5)skewX(-9deg)}
+    100%{transform:scale(1)skewX(-9deg)}
+}
+
+@keyframes twitterstretch{
+    50%{transform:rotateZ(90deg)skewY(-6deg)}
+    75%{transform:rotateZ(270deg)skewY(-6deg)}
+    100%{transform:rotateZ(360deg)skewY(-6deg)}
+}
+
+@keyframes igbackgroundswitch{
+    66%{background:white}
+    81%{background:black}
+    100%{background:white}
+}
+@keyframes igiconswitch{
+
+    66%{color:black}
+    81%{color:white}
+    100%{color:black}
+}
+
+@keyframes fly-cycle{
+    100%{
+        background-position:-900px 0;
+    }
+}
+@keyframes fly-right{
+    0%{transform:scale(0.3) translateX(-10vw);}
+    10%{transform: translateY(2vh) translateX(10vw) scale(0.4)}
+    20%{transform: translateY(0vh) translateX(30vw) scale(0.5)}
+    30%{transform: translateY(4vh) translateX(50vw) scale(0.6)}
+    40%{transform: translateY(2vh) translateX(70vw) scale(0.6)}
+    50%{transform: translateY(0vh) translateX(90vw) scale(0.6)}
+    60%{transform: translateY(0vh) translateX(110vw) scale(0.6)}
+    100%{transform: translateY(0vh) translateX(110vw) scale(0.6)}
+
+}
+
